@@ -1,4 +1,4 @@
 # EMBARCATECH
 
-Atividade de impelmentação no display 
+Atividade de implementação no display 
 
