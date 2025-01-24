@@ -119,7 +119,7 @@ int main() {
 
     while (true) {
 
-        SinalAberto(ssd, &frame_area);
+        SinalFechado(ssd, &frame_area);
         A_state = WaitWithRead(8000);   // espera com leitura do botäo
 
         if (A_state) {  // ALGUEM APERTOU O BOTAO - SAI DO SEMAFORO NORMAL
@@ -127,17 +127,17 @@ int main() {
             SinalAtencao(ssd, &frame_area);
             sleep_ms(5000);
 
-            //SINAL VERMELHO PARA OS CARROS POR 10s
-            SinalFechado(ssd, &frame_area);
+            //SINAL VERMELHO PARA OS CARROS / VERDE PARA O PEDESTRE POR 10s
+            SinalAberto(ssd, &frame_area);
             sleep_ms(10000);
 
         } else {  //NINGUEM APERTOU O BOTAO - CONTINUA NO SEMAFORO NORMAL
             SinalAtencao(ssd, &frame_area);
             sleep_ms(2000);
 
-            //SINAL VERMELHO PARA OS CARROS POR 8s
-            SinalFechado(ssd, &frame_area);
-            sleep_ms(8000);
+            //SINAL VERMELHO PARA OS CARROS / VERDE PARA O PEDESTRE POR 15s
+            SinalAberto(ssd, &frame_area);
+            sleep_ms(15000);
         }
     }
 
